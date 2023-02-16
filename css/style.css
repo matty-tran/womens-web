@@ -1,0 +1,158 @@
+body{
+   line-height: 1.25;
+   font-family: Helvetica, Arial, sans-serif;
+}
+
+
+header, nav{
+    padding: 2px 4px 2px 4px; 
+    margin: 2px 8px 2px 8px; 
+
+}
+
+nav {
+    position: absolute;
+    top: 0px; 
+    right: 0px;
+}
+
+nav ul li{
+    /* Set display, margin, padding, font-size, background-color */
+    display: inline-block;
+    margin: 5px 10px;
+    padding: 10px 15px;
+    font-size: 24px;
+    border: 2px solid rgb(168, 53, 53);
+}
+
+nav a{
+    /* Set text decoration*/
+    text-decoration: none;
+}
+
+a, a:visited{
+    /* Set color */
+    color: black;
+
+}
+
+nav li.current {
+    border: 2px solid rgb(168, 53, 53);
+    background: rgb(168, 53, 53);
+}
+
+nav a.current{
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+h1{
+   /*Set font and font size*/
+   font-size: 48px;
+   font-family: Helvetica, Arial, sans-serif;
+   font-weight: bolder;
+
+
+}
+
+h2{
+    /*Set font, font size, and alignment*/
+    font-size: 36px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 20px;
+    border: 2px solid white; 
+    background: white;
+    border-radius: 20px;
+}
+
+h3{
+    /*Set font size*/
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+
+}
+
+h1, h2, h3{
+    /*Set margin */
+    margin-top: 10px;
+
+}
+
+img {
+    width: 100%;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.grid{
+    /*Set width, margin, border properties, background color, and grid properties */
+    display: grid;
+    margin: auto;
+    justify-content: center;
+    width: 90%;
+    border-radius: 20px;
+    grid-template-columns: 60% 40%;
+    column-gap: 50px;
+    row-gap: 10px;  
+}
+
+.grid div{
+    margin-bottom: 20px;
+}
+
+.grid img{
+    width: 80%; 
+    margin: auto;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 15px; 
+    border: none;
+}
+
+.grid div:nth-child(6n + 3), .bio:nth-child(3n + 1) h3{
+    border:10px outset rgb(255, 166, 0);
+    background:   rgb(255, 215, 170); 
+    border-radius: 20px;
+}
+
+.grid div:nth-child(6n + 1), .bio:nth-child(3n + 2) h3 {
+    border:10px outset rgb(184, 0, 0);
+    background: rgb(255, 166, 166); 
+    border-radius: 20px;
+}
+
+.grid div:nth-child(6n + 5), .bio:nth-child(3n) h3{
+    border:10px outset rgb(255, 208, 0);
+    background: rgb(255, 243, 203); 
+    border-radius: 20px;
+}
+
+.bio {
+    margin-top: 20px;
+}
+ 
+p{
+
+
+}
+
+
+p, .grid ul li{
+    margin: 15px 0px 5px 50px;
+    line-height: 1;
+    font-size: 18px;
+    
+}
+
+p {
+    text-indent: 20px;
+    line-height: 1.5;
+}
