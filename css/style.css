@@ -1,28 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+
 body{
    line-height: 1.25;
-   font-family: Helvetica, Arial, sans-serif;
+   font-family: 'Jost', sans-serif;
+   background-image: url('../images/star_background.jpg');
 }
 
 
+a.skip{
+    background: white;
+    padding: 6px;
+    -webkit-transition: top 1s ease-out;
+    transition: left 1s ease-out;
+    z-index: 1;
+    /* Requirement 1 code here -- Do not remove this comment. */
+    position: absolute;
+    left: -400px; 
+    top: -200px;
+    
+  }
+
 header, nav{
-    padding: 2px 4px 2px 4px; 
-    margin: 2px 8px 2px 8px; 
+    padding: 8px; 
+    margin: 0px; 
 
 }
 
 nav {
-    position: absolute;
-    top: 0px; 
-    right: 0px;
+    position: relative;
 }
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+  }
 
 nav ul li{
     /* Set display, margin, padding, font-size, background-color */
-    display: inline-block;
-    margin: 5px 10px;
+    /* display: block; */
+    margin: 5px;
     padding: 10px 15px;
-    font-size: 24px;
+    font-size: 16px;
     border: 2px solid rgb(168, 53, 53);
+    border-radius: 10px;
 }
 
 nav a{
@@ -50,17 +73,15 @@ nav a.current{
 
 h1{
    /*Set font and font size*/
-   font-size: 48px;
-   font-family: Helvetica, Arial, sans-serif;
+   font-size: 36px;
    font-weight: bolder;
-
-
+   text-align: center;
+   margin-bottom: 24px;
 }
 
 h2{
     /*Set font, font size, and alignment*/
-    font-size: 36px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-size: 24px;
     font-weight: bold;
     text-align: center;
     text-decoration: underline;
@@ -72,7 +93,7 @@ h2{
 
 h3{
     /*Set font size*/
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     display: inline-block;
     padding: 5px;
@@ -89,6 +110,27 @@ img {
     width: 100%;
     display: inline-block;
     border-radius: 20px;
+    animation-name: slide-in;
+    animation-duration: 1.4s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: backwards;
+    transition: filter 0.5s ease;
+}
+
+@keyframes slide-in {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+img:hover {
+    filter: brightness(70%) opacity(0.7);
 }
 
 .grid{
@@ -98,22 +140,22 @@ img {
     justify-content: center;
     width: 90%;
     border-radius: 20px;
-    grid-template-columns: 60% 40%;
-    column-gap: 50px;
-    row-gap: 10px;  
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 5px;  
 }
 
 .grid div{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .grid img{
     width: 80%; 
     margin: auto;
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 20px;
-    padding: 15px; 
+    padding: 5px; 
     border: none;
 }
 
@@ -139,20 +181,126 @@ img {
     margin-top: 20px;
 }
  
-p{
-
-
-}
 
 
 p, .grid ul li{
     margin: 15px 0px 5px 50px;
     line-height: 1;
-    font-size: 18px;
+    font-size: 14px;
     
 }
 
 p {
     text-indent: 20px;
     line-height: 1.5;
+}
+
+    /* mobile horizontal nav  */
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between; */
+
+@media only screen and (min-width: 1375px) {
+    .grid{
+        /*Set width, margin, border properties, background color, and grid properties */
+        display: grid;
+        margin: auto;
+        justify-content: center;
+        width: 90%;
+        border-radius: 20px;
+        grid-template-columns: 60% 40%;
+        column-gap: 50px;
+        row-gap: 10px;  
+    }
+
+    header, nav{
+        padding: 2px 4px 2px 4px; 
+        margin: 2px 8px 2px 8px; 
+    
+    }
+    
+    nav {
+        position: absolute;
+        top: 0px; 
+        right: 0px;
+    }
+    
+    nav ul {
+        margin-top: 15px;
+        flex-direction: row;
+    }   
+
+    nav ul li{
+        /* Set display, margin, padding, font-size, background-color */
+        margin: 5px 10px;
+        padding: 10px 15px;
+        font-size: 24px;
+        border: 2px solid rgb(168, 53, 53);
+        border-radius: 10px;
+    }
+    
+    nav a{
+        /* Set text decoration*/
+        text-decoration: none;
+    }
+    
+    a, a:visited{
+        /* Set color */
+        color: black;
+    
+    }
+    
+    nav li.current {
+        border: 2px solid rgb(168, 53, 53);
+        background: rgb(168, 53, 53);
+    }
+    
+    nav a.current{
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+
+    .grid div{
+        margin-bottom: 20px;
+    }
+
+    .grid img{
+        width: 80%; 
+        margin: auto;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        padding: 15px; 
+        border: none;
+    }
+
+    .bio {
+        margin-top: 20px;
+    }
+    
+    h1 {
+        text-align: left;
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+
+    p, .grid ul li{
+        margin: 15px 0px 5px 50px;
+        line-height: 1;
+        font-size: 20px;
+    }
+    p {
+        text-indent: 20px;
+        line-height: 1.5;
+    }
 }
