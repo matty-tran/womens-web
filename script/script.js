@@ -2,7 +2,7 @@ const mediaQueryMatch = window.matchMedia("only screen and (min-width: 900px) an
 
 const toggleBios = () => {
     const bios = document.querySelectorAll('.bio')
-    document.querySelectorAll('img').forEach((profile, index) => profile.addEventListener('click', (e) => {
+    document.querySelectorAll('.profile').forEach((profile, index) => profile.addEventListener('click', (e) => {
         const display = bios[index].style.display
         if (display === 'none' || !display){
             bios[index].style.display = 'initial'
@@ -16,11 +16,3 @@ const toggleBios = () => {
 if (mediaQueryMatch){
     toggleBios()
 }
-
-
-
-
-
-// bios.forEach((bio) => bio.style.display = 'none')
-
-// document.querySelector('#bell').addEventListener('click', () => console.log('yeehaw'))

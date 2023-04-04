@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
 
-
 body{
    line-height: 1.25;
    font-family: 'Jost', sans-serif;
@@ -14,12 +13,20 @@ a.skip{
     -webkit-transition: top 1s ease-out;
     transition: left 1s ease-out;
     z-index: 1;
-    /* Requirement 1 code here -- Do not remove this comment. */
     position: absolute;
     left: -400px; 
     top: -200px;
-    
   }
+
+a.skip:focus {
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+}
 
 header, nav{
     padding: 8px; 
@@ -39,8 +46,6 @@ nav ul {
   }
 
 nav ul li{
-    /* Set display, margin, padding, font-size, background-color */
-    /* display: block; */
     margin: 5px;
     padding: 10px 15px;
     font-size: 16px;
@@ -131,9 +136,31 @@ img {
   }
 
 img:hover, img:focus{
-    filter: brightness(70%) opacity(0.7);
+    filter: brightness(30%) opacity(0.7);
 }
 
+.profile {
+    position: relative;
+    display: inline-block;
+  }
+
+.quote {
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  }
+  
+  .profile:hover .quote {
+    opacity: 1;
+  }
+  
 .grid{
     /*Set width, margin, border properties, background color, and grid properties */
     display: grid;
@@ -179,6 +206,14 @@ img:hover, img:focus{
     border-radius: 20px;
 }
 
+.grid .profile div {
+    border: none;
+    background: none;
+    color: rgb(255, 209, 143);
+    font-size: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .bio {
     margin-top: 20px;
 }
@@ -197,11 +232,14 @@ p {
     line-height: 1.5;
 }
 
-    /* mobile horizontal nav  */
-    /* display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between; */
+dl h2 {
+    text-align: left;
+    padding-left: 25px;
+}
+
+dl h3 {
+    display: block;
+}
 
 
 @media only screen and (min-width: 900px) and (max-width: 1375px){
@@ -223,6 +261,11 @@ p {
     h3 {
         font-size: 24px;
     }
+
+    .grid .profile div {
+        font-size: 28px; 
+    }
+    
 
     p, .grid ul li{
         font-size: 20px;
@@ -333,6 +376,11 @@ p {
         font-size: 28px;
     }
 
+    
+    .grid .profile div {
+        font-size: 32px; 
+    }
+
     p, .grid ul li{
         margin: 15px 0px 5px 50px;
         line-height: 1;
@@ -350,3 +398,5 @@ p {
       transition: none;
     }
   }
+
+
